@@ -9,6 +9,9 @@ function ListaTareas() {
             <Tarea tarea="Terminar serie de Netflix"  />
             <Tarea tarea="Estudiar"  />
             <Tarea tarea="Lavar platos"  />
+            <Tarea tarea="Terminar serie de Netflix"  />
+            <Tarea tarea="Estudiar"  />
+            <Tarea tarea="Lavar platos"  />
         </section>
     )
 }

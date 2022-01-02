@@ -1,11 +1,33 @@
 .tarea {
     margin: 2rem 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 .tarea__descripcion {
-    display: inline;
     width: 100%;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    flex-grow: 3;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+.tarea__completar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.tarea__borrar {
+    background-color: #faebd7;
+    border: none;
+    border-radius: 1rem;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.tarea__borrar .icon-tabler-trash, .tarea__completar .icon-tabler-check {
+    transition: stroke 0.5s 0s ease;
+}
+.tarea__borrar:hover .icon-tabler-trash {
+    stroke: #ff2825;
+}
+.tarea__completar:hover .icon-tabler-check {
+    stroke: #00b341;
 }
