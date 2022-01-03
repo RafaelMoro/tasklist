@@ -13,6 +13,7 @@ function TaskContext(props) {
     return (
         <Context.Provider value={{
             tasks,
+            setTasks,
             test
         }}>
             {props.children}

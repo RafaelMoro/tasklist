@@ -1,10 +1,27 @@
 import React from 'react'
 import '../css/Tarea.css'
+import {Context} from '../hooks/TaskContext'
 
-function Tarea({ tarea, completed }) {
+function Tarea({ tarea, completed, id }) {
+    const {tasks, setTasks} = React.useContext(Context)
+
+    const completeTask = () => {
+        const newTasklist = [...tasks]
+        const taskIndex = newTasklist.findIndex(task => task.id === id)
+        if (newTasklist[taskIndex].completed === false) {
+            newTasklist[taskIndex].completed = true
+        }else {
+            newTasklist[taskIndex].completed = false
+        }
+        setTasks(newTasklist)
+
+        //
+        //Lo copio en un nuevo objeto
+        //Filtrar Con el id, busco el objeto en el arreglo
+    }
     return(
         <div className='tarea'>
-            <span className='tarea__completar'>
+            <span className='tarea__completar' onClick={completeTask}>
                 <svg xmlns="http://www.w3.org/2000/svg" className={!completed ? 'icon icon-tabler icon-tabler-check' : 'icon icon-tabler icon-tabler-check completed__tick'} width="40" height="40" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#6f32be" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l5 5l10 -10" />
