@@ -6,9 +6,16 @@ import '../css/Main.css'
 
 function Main() {
     const [toggleModal, setToggleModal] = React.useState(false)
+    React.useEffect(() => {
+        if(toggleModal) {
+            document.body.classList.add('fix-body')
+        }else {
+            document.body.classList.remove('fix-body')
+        }
+    }, [toggleModal])
     return(
         <main className='main'>
-            {toggleModal && <AñadirTarea />}
+            { toggleModal && <AñadirTarea setToggleModal={setToggleModal} /> }
             <h1 className='title'>Tasklists</h1>
             <p className='description'>Haz completado 5 tareas de 10</p>
             <BuscadorTarea />
