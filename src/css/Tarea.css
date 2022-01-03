@@ -32,6 +32,15 @@
 .tarea__completar:hover .icon-tabler-check {
     stroke: #00b341;
 }
+.completed__text {
+    text-decoration: line-through;
+}
+.completed__tick {
+    stroke: #00b341;
+}
+.tarea__completar:hover .completed__tick {
+    stroke: #6f32be;
+}
 @media (min-width: 768px) {
     .tarea {
         width: 40%;
