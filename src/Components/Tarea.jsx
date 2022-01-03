@@ -6,18 +6,20 @@ function Tarea({ tarea, completed, id }) {
     const {tasks, setTasks} = React.useContext(Context)
 
     const completeTask = () => {
+        //Obtengo una copia del estado
         const newTasklist = [...tasks]
+        //Busco su index
         const taskIndex = newTasklist.findIndex(task => task.id === id)
+        //Si esa task esta como falsa, lo cambiamos a true y viceversa
         if (newTasklist[taskIndex].completed === false) {
             newTasklist[taskIndex].completed = true
         }else {
             newTasklist[taskIndex].completed = false
         }
+        //Guardamos cambios en el estado
         setTasks(newTasklist)
-
-        //
-        //Lo copio en un nuevo objeto
-        //Filtrar Con el id, busco el objeto en el arreglo
+        //Persistimos cambios en localStorage
+        localStorage.setItem('TASKLIST_V1', JSON.stringify(newTasklist))
     }
     return(
         <div className='tarea'>
