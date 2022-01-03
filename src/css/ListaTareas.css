@@ -2,3 +2,10 @@
     display: flex;
     flex-direction: column;
 }
+@media (min-width: 768px) {
+    .lista_tareas {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

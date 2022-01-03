@@ -10,7 +10,7 @@ function ListaTareas() {
             <Tarea tarea="Estudiar"  />
             <Tarea tarea="Lavar platos"  />
             <Tarea tarea="Terminar serie de Netflix"  />
-            <Tarea tarea="Estudiar"  />
+            <Tarea tarea="Estudiar para mi examen de programacion funcional de SAP"  />
             <Tarea tarea="Lavar platos"  />
         </section>
     )

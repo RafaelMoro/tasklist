@@ -7,6 +7,7 @@
 .tarea__descripcion {
     width: 100%;
     font-size: 1.5rem;
+    line-height: 2.5rem;
     margin-bottom: 1rem;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
@@ -30,4 +31,18 @@
 }
 .tarea__completar:hover .icon-tabler-check {
     stroke: #00b341;
+}
+@media (min-width: 768px) {
+    .tarea {
+        width: 40%;
+        margin: 0 1rem 0 3rem;
+    }
+    .tarea__descripcion {
+        line-height: 2rem;
+    }
+}
+@media (min-width: 1024px) {
+    .tarea {
+        width: 28%;
+    }
 }
