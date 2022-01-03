@@ -3,6 +3,7 @@ import BuscadorTarea from './BuscadorTarea'
 import ListaTareas from './ListaTareas'
 import AñadirTarea from './AñadirTarea'
 import '../css/Main.css'
+import { Context } from '../hooks/TaskContext'
 
 function Main() {
     const [toggleModal, setToggleModal] = React.useState(false)
@@ -13,6 +14,9 @@ function Main() {
             document.body.classList.remove('fix-body')
         }
     }, [toggleModal])
+
+    const {tasks} = React.useContext(Context)
+    console.log(tasks)
     return(
         <main className='main'>
             { toggleModal && <AñadirTarea setToggleModal={setToggleModal} /> }

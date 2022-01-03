@@ -1,0 +1,35 @@
+[33mcommit ad168f6b1c9fd1c190e54a6a78c456eb5d63a1f8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Rafael Moro <rafael.moro.galindo@gmail.com>
+Date:   Sun Jan 2 19:59:40 2022 -0600
+
+    Se añadio el css cuando una tarea este completada
+
+[33mcommit 3a5a13d80e1b72eca66d0b2b6ebce9d3c57b4d8d[m
+Author: Rafael Moro <rafael.moro.galindo@gmail.com>
+Date:   Sun Jan 2 19:37:29 2022 -0600
+
+    Se termino maquetacion y css
+
+[33mcommit d402286acfc015caf2a8d96ccc9e84de495d3181[m
+Author: Rafael Moro <rafael.moro.galindo@gmail.com>
+Date:   Sun Jan 2 18:52:54 2022 -0600
+
+    Maquetacion en mobile con css terminada
+
+[33mcommit 10744ea50fcb7ec3df6a1bc99e3db345fae37758[m
+Author: Rafael Moro <rafael.moro.galindo@gmail.com>
+Date:   Sun Jan 2 14:30:06 2022 -0600
+
+    Maquetacion con CSS casi terminada
+
+[33mcommit a5a3c71f3566c393e748bcd5342ed4d20c4e55fe[m
+Author: Rafael Moro <rafael.moro.galindo@gmail.com>
+Date:   Sun Jan 2 01:45:52 2022 -0600
+
+    Se creo componentes y sus css, se empezo a maquetar
+
+[33mcommit 69d2b07130e9767c4a98858afc91ceb6072f3109[m
+Author: Rafael Moro <rafael.moro.galindo@gmail.com>
+Date:   Sat Jan 1 23:15:40 2022 -0600
+
+    Initialize project using Create React App
