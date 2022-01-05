@@ -12,7 +12,7 @@ body {
 }
 .main {
     width: 100%;
-    background-color: #faebd7;
+    height: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
