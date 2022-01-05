@@ -3,7 +3,7 @@ import '../css/Tarea.css'
 import {Context} from '../hooks/TaskContext'
 
 function Tarea({ tarea, completed, id }) {
-    const {tasks, setTasks} = React.useContext(Context)
+    const {tasks, setTasks,setFilteredTasks} = React.useContext(Context)
 
     const completeTask = () => {
         //Obtengo una copia del estado
@@ -21,6 +21,19 @@ function Tarea({ tarea, completed, id }) {
         //Persistimos cambios en localStorage
         localStorage.setItem('TASKLIST_V1', JSON.stringify(newTasklist))
     }
+    const deleteTask = () => {
+        //Create a copy of the "tasks" state
+        const newTasklist = [...tasks]
+        //Get Id from the task to be deleted
+        const taskIndex = newTasklist.findIndex(task => task.id === id)
+        //Erase that task based on its index
+        newTasklist.splice(taskIndex, 1)
+        setTasks(newTasklist)
+        setFilteredTasks(newTasklist)
+        localStorage.setItem('TASKLIST_V1', JSON.stringify(newTasklist))
+        //Descartarlo del estado
+        //Persistir cambios en localStorage
+    }
     return(
         <div className='tarea'>
             <span className='tarea__completar' onClick={completeTask}>
@@ -30,7 +43,7 @@ function Tarea({ tarea, completed, id }) {
                 </svg>
             </span>
             <p className={!completed ? 'tarea__descripcion' : 'tarea__descripcion completed__text'}>{tarea}</p>
-            <button type='button' className='tarea__borrar'>
+            <button type='button' className='tarea__borrar' onClick={deleteTask}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#6f32be" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="7" x2="20" y2="7" />
