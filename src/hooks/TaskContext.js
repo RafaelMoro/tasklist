@@ -4,17 +4,21 @@ const Context = React.createContext()
 
 function TaskContext(props) {
     const [tasks, setTasks] = React.useState([])
-    const test = 1
     const tasklist = JSON.parse(localStorage.getItem('TASKLIST_V1'))
 
     if(tasks.length < 1) {
         setTasks(tasklist)
     }
+    const [filteredTasks, setFilteredTasks] = React.useState([])
+    if (filteredTasks.length < 1) {
+        setFilteredTasks(tasks)
+    }
     return (
         <Context.Provider value={{
             tasks,
             setTasks,
-            test
+            filteredTasks,
+            setFilteredTasks,
         }}>
             {props.children}
         </Context.Provider>
