@@ -6,7 +6,9 @@ import '../css/Main.css'
 import { Context } from '../hooks/TaskContext'
 
 function Main() {
+    //Modal code
     const [toggleModal, setToggleModal] = React.useState(false)
+
     React.useEffect(() => {
         if(toggleModal) {
             document.body.classList.add('fix-body')
@@ -15,12 +17,19 @@ function Main() {
         }
     }, [toggleModal])
 
-    const { filteredTasks } = React.useContext(Context)
+    //Getting states from TaskContext
+    const { filteredTasks, tasks } = React.useContext(Context)
+
+    //Completed Tasks text code
+    const totalTasks = tasks.length
+    const completedTasks = tasks.filter((task) => task.completed === true)
+    const numberOfCompletedTasks = completedTasks.length
+
     return(
         <main className='main'>
             { toggleModal && <AñadirTarea setToggleModal={setToggleModal} /> }
             <h1 className='title'>Tasklists</h1>
-            <p className='description'>Haz completado 5 tareas de 10</p>
+            <p className='description'>Haz completado {numberOfCompletedTasks} de {totalTasks} tareas.</p>
             <BuscadorTarea />
             <ListaTareas tareas={filteredTasks} />
             <button type='button' className='Add-Button' onClick={() => setToggleModal(true)}>
