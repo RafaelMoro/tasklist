@@ -1,6 +1,6 @@
 const generateRandomId = () => {
     const random_number = Math.random()
-    return Math.floor(random_number*100)
+    return Math.floor(random_number*10000)
 }
 
 export {generateRandomId}

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/AñadirTarea.css'
 import {Context} from '../hooks/TaskContext'
+import {generateRandomId} from '../hooks/generateRandomId.js'
 
 function AñadirTarea({ setToggleModal }) {
     const {tasks, setTasks, setFilteredTasks} = React.useContext(Context)
@@ -13,10 +14,11 @@ function AñadirTarea({ setToggleModal }) {
     //This function adds the new Task to our Tasks updating state and localStorage item.
     const addTask = () => {
         //Generate the new id
-        const tasksLength = tasks.length
-        const newId = tasksLength + 1
+        //const tasksLength = tasks.length
+        const newId = generateRandomId()
         //Create the new object
         const newTask = {id: newId, nombre: information, completed: false}
+        console.log(newTask.id)
         //Get a copy of the "tasks" state
         const newTasklist = [...tasks]
         //Add the new object to the array
