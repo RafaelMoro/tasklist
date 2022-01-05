@@ -1,9 +1,9 @@
-.lista_tareas {
+.tasklist {
     display: flex;
     flex-direction: column;
 }
 @media (min-width: 768px) {
-    .lista_tareas {
+    .tasklist {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;

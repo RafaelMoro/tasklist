@@ -1,10 +1,10 @@
-.tarea {
+.task {
     margin: 2rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
-.tarea__descripcion {
+.task__description {
     width: 100%;
     font-size: 1.5rem;
     line-height: 2.5rem;
@@ -12,25 +12,25 @@
     grid-column: 2 / 4;
     grid-row: 1 / 2;
 }
-.tarea__completar {
+.complete__task {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     cursor: pointer;
 }
-.tarea__borrar {
+.delete__task {
     background-color: #faebd7;
     border: none;
     border-radius: 1rem;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
-.tarea__borrar .icon-tabler-trash, .tarea__completar .icon-tabler-check {
+.delete__task .icon-tabler-trash, .complete__task .icon-tabler-check {
     transition: stroke 0.5s 0s ease;
 }
-.tarea__borrar:hover .icon-tabler-trash {
+.delete__task:hover .icon-tabler-trash {
     stroke: #ff2825;
 }
-.tarea__completar:hover .icon-tabler-check {
+.complete__task:hover .icon-tabler-check {
     stroke: #00b341;
 }
 .completed__text {
@@ -39,20 +39,20 @@
 .completed__tick {
     stroke: #00b341;
 }
-.tarea__completar:hover .completed__tick {
+.complete__task:hover .completed__tick {
     stroke: #6f32be;
 }
 @media (min-width: 768px) {
-    .tarea {
+    .task {
         width: 40%;
         margin: 0 1rem 0 3rem;
     }
-    .tarea__descripcion {
+    .task__description {
         line-height: 2rem;
     }
 }
 @media (min-width: 1024px) {
-    .tarea {
+    .task {
         width: 28%;
     }
 }

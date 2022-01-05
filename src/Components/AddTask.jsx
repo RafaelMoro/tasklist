@@ -1,9 +1,9 @@
 import React from 'react'
-import '../css/AñadirTarea.css'
+import '../css/AddTask.css'
 import {Context} from '../hooks/TaskContext'
 import {generateRandomId} from '../hooks/generateRandomId.js'
 
-function AñadirTarea({ setToggleModal }) {
+function AddTask({ setToggleModal }) {
     const {tasks, setTasks, setFilteredTasks} = React.useContext(Context)
     const [information, setInformation] = React.useState('')
 
@@ -17,8 +17,7 @@ function AñadirTarea({ setToggleModal }) {
         //const tasksLength = tasks.length
         const newId = generateRandomId()
         //Create the new object
-        const newTask = {id: newId, nombre: information, completed: false}
-        console.log(newTask.id)
+        const newTask = {id: newId, text: information, completed: false}
         //Get a copy of the "tasks" state
         const newTasklist = [...tasks]
         //Add the new object to the array
@@ -60,4 +59,4 @@ function AñadirTarea({ setToggleModal }) {
     )
 }
 
-export default AñadirTarea
+export default AddTask

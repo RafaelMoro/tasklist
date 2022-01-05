@@ -1,8 +1,8 @@
 import React from 'react'
-import '../css/BuscadorTarea.css'
+import '../css/TaskSearcher.css'
 import {Context} from '../hooks/TaskContext'
 
-function BuscadorTarea() {
+function TaskSearcher() {
     const {tasks, setFilteredTasks} = React.useContext(Context)
     const filterTasks = (event) => {
         //Obtain the searched value from the input and transform it to lowercase
@@ -14,7 +14,7 @@ function BuscadorTarea() {
         } else {
             //If the searched value has any character, then filter the tasks
             const result = tasks.filter((task) => {
-                const searchedTask = task.nombre.toLowerCase()
+                const searchedTask = task.text.toLowerCase()
                 return searchedTask.includes(searchedValue)
             })
             setFilteredTasks(result)
@@ -22,8 +22,8 @@ function BuscadorTarea() {
 
     }
     return(
-        <input className='buscador' type='text' placeholder='Buscar tarea...' onChange={filterTasks} />
+        <input className='searcher' type='text' placeholder='Buscar tarea...' onChange={filterTasks} />
     )
 }
 
-export default BuscadorTarea
+export default TaskSearcher

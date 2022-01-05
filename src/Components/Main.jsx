@@ -1,7 +1,7 @@
 import React from 'react'
-import BuscadorTarea from './BuscadorTarea'
-import ListaTareas from './ListaTareas'
-import AñadirTarea from './AñadirTarea'
+import TaskSearcher from './TaskSearcher'
+import TaskList from './TaskList'
+import AddTask from './AddTask'
 import '../css/Main.css'
 import { Context } from '../hooks/TaskContext'
 
@@ -27,11 +27,11 @@ function Main() {
 
     return(
         <main className='main'>
-            { toggleModal && <AñadirTarea setToggleModal={setToggleModal} /> }
-            <h1 className='title'>Tasklists</h1>
+            { toggleModal && <AddTask setToggleModal={setToggleModal} /> }
+            <h1 className='title'>Lista de tareas.</h1>
             <p className='description'>Haz completado {numberOfCompletedTasks} de {totalTasks} tareas.</p>
-            <BuscadorTarea />
-            <ListaTareas tareas={filteredTasks} />
+            <TaskSearcher />
+            <TaskList filteredTasks={filteredTasks} />
             <button type='button' className='Add-Button' onClick={() => setToggleModal(true)}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-circle-plus" width="60" height="60" viewBox="0 0 24 24" strokeWidth="1" stroke="#6f32be" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

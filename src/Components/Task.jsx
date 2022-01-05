@@ -1,8 +1,8 @@
 import React from 'react'
-import '../css/Tarea.css'
+import '../css/Task.css'
 import {Context} from '../hooks/TaskContext'
 
-function Tarea({ tarea, completed, id }) {
+function Task({ task, completed, id }) {
     const {tasks, setTasks,setFilteredTasks} = React.useContext(Context)
 
     const completeTask = () => {
@@ -35,15 +35,15 @@ function Tarea({ tarea, completed, id }) {
         //Persistir cambios en localStorage
     }
     return(
-        <div className='tarea'>
-            <span className='tarea__completar' onClick={completeTask}>
+        <div className='task'>
+            <span className='complete__task' onClick={completeTask}>
                 <svg xmlns="http://www.w3.org/2000/svg" className={!completed ? 'icon icon-tabler icon-tabler-check' : 'icon icon-tabler icon-tabler-check completed__tick'} width="40" height="40" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#6f32be" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l5 5l10 -10" />
                 </svg>
             </span>
-            <p className={!completed ? 'tarea__descripcion' : 'tarea__descripcion completed__text'}>{tarea}</p>
-            <button type='button' className='tarea__borrar' onClick={deleteTask}>
+            <p className={!completed ? 'task__description' : 'task__description completed__text'}>{task}</p>
+            <button type='button' className='delete__task' onClick={deleteTask}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#6f32be" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="7" x2="20" y2="7" />
@@ -57,4 +57,4 @@ function Tarea({ tarea, completed, id }) {
     )
 }
 
-export default Tarea
+export default Task
