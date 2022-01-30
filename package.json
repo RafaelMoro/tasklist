@@ -18,6 +18,12 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "keywords": [
+    "react",
+    "Javascript",
+  ],
+  "author": "Rafael Moro <rafael.moro.galindo@gmail.com>",
+  "license": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
